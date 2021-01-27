@@ -25,7 +25,7 @@ const Cart = () => {
             cartItems.map(c => <SingleCartItem item={c} />)
         }
         <div className="row-seperator-after"></div>
-        <p className="total-price">Total Price : <span>${cartItems.reduce((acc, curr) => (acc = acc + (curr.quantity * curr.price)), 0)}</span></p>
+        <p className="total-price">Total Price : <span>${Math.round((cartItems.reduce((acc, curr) => (acc = acc + (curr.quantity * curr.price)), 0)) * 100) / 100}</span></p>
     </div >
 }
 

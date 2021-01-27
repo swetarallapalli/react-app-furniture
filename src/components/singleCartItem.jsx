@@ -17,7 +17,8 @@ const SingleCartItem = ({ item }) => {
         <div class="col">{title}</div>
         <div class="col">${price}</div>
         <div class="col"><button className="quantity-btn" onClick={() => handleQuantityDecrement(id)} disabled={quantity <= 1 ? true : false}>-</button> {quantity} <button className="quantity-btn" onClick={() => handleQuantityIncrement(id)}>+</button></div>
-        <div class="col">${quantity * price}</div>
+        <div class="col">${Math.round((quantity * price) * 100) / 100}</div>
+        {/* <div class="col">${(quantity * price)}</div> */}
         <div class="col"><button class="delete-button" onClick={() => handleDelete(id)}>Remove</button></div>
     </div>
     </>
